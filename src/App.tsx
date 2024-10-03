@@ -98,6 +98,9 @@ const App: React.FC = () => {
                 value={answer}
                 onKeyDown={(e) => onNumberSubmit(e, correctAnswer)}
               />
+              <button type="submit" disabled={numCorrectAnswers !== 100}>
+                Submit
+              </button>
             </div>
           )}
           {isRichardOpen && (
@@ -107,7 +110,7 @@ const App: React.FC = () => {
               <p>GET GOOD!</p>
             </>
           )}
-          <button type="submit" disabled={numCorrectAnswers !== 100}>
+          <button type="submit">
             Enter
           </button>
         </form>
