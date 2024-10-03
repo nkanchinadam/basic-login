@@ -90,15 +90,26 @@ const App: React.FC = () => {
           </div>
           {isQuestionOpen && (
             <div>
-              <h1>
-                Solve this math problem!!!!!!!!!!!!!! NOW GODDAMN IT!!!!!
-              </h1>
+              <h1>Solve this math problem!!!!!!!!!!!!!! NOW GODDAMN IT!!!!!</h1>
               <p>{question}</p>
-              <input type="number" onChange={(e) => setAnswer(e.target.valueAsNumber)} value={answer} onKeyDown={(e) => onNumberSubmit(e, correctAnswer)} />
+              <input
+                type="number"
+                onChange={(e) => setAnswer(e.target.valueAsNumber)}
+                value={answer}
+                onKeyDown={(e) => onNumberSubmit(e, correctAnswer)}
+              />
             </div>
           )}
-
-          <button type="submit" disabled={numCorrectAnswers !== 100}>Enter</button>
+          {isRichardOpen && (
+            <>
+              <image href="./richard.png" />
+              <p>RICHARD IS DISAPPOINTED IN YOU!!!!!!!!!!</p>
+              <p>GET GOOD!</p>
+            </>
+          )}
+          <button type="submit" disabled={numCorrectAnswers !== 100}>
+            Enter
+          </button>
         </form>
       )}
     </div>
